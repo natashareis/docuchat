@@ -1,7 +1,7 @@
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
 pydantic>=2.7.4,<3.0.0
-pydantic-settings==2.1.0
+pydantic-settings>=2.4.0,<3.0.0
 sqlalchemy==2.0.25
 alembic==1.13.1
 psycopg2-binary==2.9.9
@@ -19,12 +19,6 @@ unstructured>=0.17.0
 unstructured[pdf]>=0.17.0
 python-docx==1.1.0
 pypdf==4.0.1
-
-# Testing
-pytest==7.4.4
-pytest-cov==4.1.0
-pytest-asyncio==0.23.3
-httpx==0.26.0
 
 # Code Quality
 pylint==3.0.3

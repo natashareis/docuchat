@@ -13,6 +13,7 @@ class VectorStoreService:
         """Initialize vector store service."""
         os.makedirs(settings.CHROMA_PERSIST_DIRECTORY, exist_ok=True)
         self.db = lancedb.connect(settings.CHROMA_PERSIST_DIRECTORY)
+        self.client = self.db  # Alias for backwards compatibility
         self.embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
