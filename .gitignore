@@ -29,15 +29,6 @@ env.bak/
 venv.bak/
 *.pyc
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-.hypothesis/
-coverage.xml
-*.cover
-
 # IDEs
 .vscode/
 .idea/
