@@ -31,10 +31,10 @@ describe('DocumentUpload', () => {
   })
 
   it('displays file name after selection', async () => {
-    render(<DocumentUpload onDocumentReady={mockOnDocumentReady} />)
+    const { container } = render(<DocumentUpload onDocumentReady={mockOnDocumentReady} />)
     
     const file = new File(['content'], 'test.pdf', { type: 'application/pdf' })
-    const input = screen.getByRole('button').querySelector('input')
+    const input = container.querySelector('input[type="file"]')
     
     await userEvent.upload(input, file)
     
@@ -44,24 +44,24 @@ describe('DocumentUpload', () => {
   })
 
   it('shows upload and cancel buttons after file selection', async () => {
-    render(<DocumentUpload onDocumentReady={mockOnDocumentReady} />)
+    const { container } = render(<DocumentUpload onDocumentReady={mockOnDocumentReady} />)
     
     const file = new File(['content'], 'test.pdf', { type: 'application/pdf' })
-    const input = screen.getByRole('button').querySelector('input')
+    const input = container.querySelector('input[type="file"]')
     
     await userEvent.upload(input, file)
     
     await waitFor(() => {
-      expect(screen.getByText('Upload Document')).toBeInTheDocument()
-      expect(screen.getByText('Cancel')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: 'Upload Document' })).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument()
     })
   })
 
   it('resets state when cancel is clicked', async () => {
-    render(<DocumentUpload onDocumentReady={mockOnDocumentReady} />)
+    const { container } = render(<DocumentUpload onDocumentReady={mockOnDocumentReady} />)
     
     const file = new File(['content'], 'test.pdf', { type: 'application/pdf' })
-    const input = screen.getByRole('button').querySelector('input')
+    const input = container.querySelector('input[type="file"]')
     
     await userEvent.upload(input, file)
     
