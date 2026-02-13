@@ -2,19 +2,6 @@
 
 Document question-answering powered by RAG (Retrieval Augmented Generation).
 
-## 🚀 Free Cloud Deployment Available
-
-Deploy for **$0/month** with **built-in protection** to ensure you never pay:
-
-- ✅ **Cloudflare Pages** (frontend) - Unlimited bandwidth, always free
-- ✅ **Google Cloud Run** (backend) - 2M requests/month free, never sleeps
-- ✅ **Automatic cutoff** at 2M requests - impossible to exceed free tier
-- ✅ **One-command deployment** - See [QUICKDEPLOY.md](QUICKDEPLOY.md)
-
-**[📖 Quick Deploy Guide](QUICKDEPLOY.md)** | **[🛡️ Free Tier Protection Details](FREE_TIER_PROTECTION.md)**
-
----
-
 ## Tech Stack
 
 **Frontend:** React 18, Vite, TailwindCSS, shadcn/ui, Framer Motion  
@@ -206,35 +193,6 @@ Ensure `.env` uses `MODEL_NAME=llama-3.3-70b-versatile`, then restart backend.
 Verify `BACKEND_CORS_ORIGINS` in `.env` includes frontend URL.
 
 ## Production Deployment
-
-### Cloud Deployment (Free Tier)
-
-**Quick Deploy:**
-```powershell
-# Windows
-.\deploy-backend.ps1
-
-# Mac/Linux
-chmod +x deploy-backend.sh
-./deploy-backend.sh
-```
-
-See [QUICKDEPLOY.md](QUICKDEPLOY.md) for complete instructions.
-
-**Includes:**
-- 🛡️ Built-in rate limiting (2M requests/month)
-- ✅ Resource limits (max 10 instances, 80 concurrency)
-- ✅ Automatic monthly reset
-- ✅ Budget protection (never enter paid tier)
-
-**Deployment targets:**
-- **Backend:** Google Cloud Run (free, never sleeps)
-- **Frontend:** Cloudflare Pages (free, unlimited bandwidth)
-
-**Requirements:**
-- Google Cloud account (free tier)
-- Cloudflare account (free)
-- Groq API key
 
 ### Self-Hosted Deployment
 
