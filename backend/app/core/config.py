@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from typing import List
+from typing import List, Union
+from pydantic import field_validator
 
 
 class _Settings(BaseSettings):
@@ -15,7 +16,16 @@ class _Settings(BaseSettings):
     DATABASE_URL: str
     SECRET_KEY: str
     
-    BACKEND_CORS_ORIGINS: List[str] = ["http://localhost:5173"]
+    BACKEND_CORS_ORIGINS: Union[List[str], str] = ["http://localhost:5173"]
+    
+    @field_validator("BACKEND_CORS_ORIGINS", mode="before")
+    @classmethod
+    def parse_cors_origins(cls, v):
+        """Parse CORS origins from string or list."""
+        if isinstance(v, str):
+            # Support comma-separated string for environment variables
+            return [origin.strip() for origin in v.split(",")]
+        return v
     
     UPLOAD_DIR: str = "./uploads"
     MAX_UPLOAD_SIZE: int = 10485760

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Document shape -->
+  <rect x="12" y="8" width="36" height="48" rx="2" fill="#3b82f6" opacity="0.9"/>
+  <rect x="12" y="8" width="36" height="48" rx="2" fill="none" stroke="#1e40af" stroke-width="2"/>
+  
+  <!-- Document lines -->
+  <line x1="18" y1="18" x2="42" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="26" x2="42" y2="26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <line x1="18" y1="34" x2="36" y2="34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Chat bubble -->
+  <circle cx="44" cy="44" r="14" fill="#10b981" stroke="#059669" stroke-width="2"/>
+  <path d="M 38 44 Q 38 40 42 40 Q 46 40 46 44 Q 46 48 42 48 Q 40 48 39 50 L 38 48 Q 38 46 38 44 Z" fill="white"/>
+</svg>
