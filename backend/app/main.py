@@ -5,10 +5,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import chat, documents, health
 from app.core.config import settings
 from app.core.database import Base, engine
+from app.middleware.rate_limit import MonthlyRequestLimiter
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title=settings.PROJECT_NAME, version="1.0.0")
+
+# Add rate limiting middleware to enforce free tier limits
+app.add_middleware(MonthlyRequestLimiter)
 
 app.add_middleware(
     CORSMiddleware,
